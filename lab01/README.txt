@@ -1,1 +1,1 @@
-﻿Este é o código para o 1º exercicio da disciplina de Sistemas de informação.Esta atividade é voltada para o uso e aprendizado das funcionalidades do git e gitHub, juntamente com um aprendizado sobre TDD(test driver development)
+﻿Este é o código para o 1º exercicio da disciplina de Sistemas de informação.Esta atividade é voltada para o uso e aprendizado das funcionalidades do git e juntamente gitHub,  sobre TDD(test driver development)  com um aprendizado
