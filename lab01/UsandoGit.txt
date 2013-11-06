@@ -2,7 +2,7 @@ public class UsandoGit {
 
 
 	public static void main(String args[]){
-		//aqui o código
+		//o código será escrito aqui
 	}
 
 
