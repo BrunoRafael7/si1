@@ -14,24 +14,19 @@ public class TestaConversorDeNumeros {
 		conversor = new ConversorDeNumeros();
 	}
 	
-	@Test
-	public void testaEntradaSimples(){
-		
-		//Testes Simples cenário 1
-		assertEquals("dez", conversor.converte(10));
-		assertEquals("um", conversor.converte(1));
-		assertEquals("zero", conversor.converte(0));
-		
-		//Testes Simples cenário 2
-		assertEquals("quinze", conversor.converte(15));
-		assertEquals("vinte", conversor.converte(20));
-	}
 	/**
-	 * Se a entrada for vazia (simbolizado por -1)
+	 * Se a entrada for vazia
 	 * o método retorna null
 	 */
 	@Test
 	public void testaEntradaVazia(){
-		assertEquals(null, conversor.converte(-1));
+		assertEquals(null, conversor.converte(""));
+	}
+	
+	public void testaEntradasInvalidas(){
+		try{
+			conversor.converte("carro");
+			fail("Entrada inválida");
+		}catch (Exception e) {}
 	}
 }

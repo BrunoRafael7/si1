@@ -1,9 +1,9 @@
 package conversordenumeros;
 
-public class ConversorDeNumeros {
-	private String [] nomesDasUnidades;
+public class NumerosEmPortugues {
+private String [] nomesDasUnidades;
 	
-	public ConversorDeNumeros(){
+	public NumerosEmPortugues(){
 		nomesDasUnidades = new String[21];
 		preencheArrayDeNomes();
 	}
@@ -39,5 +39,4 @@ public class ConversorDeNumeros {
 		}
 		return null;
 	}
-
 }
