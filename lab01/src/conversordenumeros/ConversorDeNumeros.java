@@ -33,7 +33,7 @@ public class ConversorDeNumeros {
 		
 	}
 
-	public String convert(int i) {
+	public String converte(int i) {
 		if(i >= 0 && i <= 20){
 			return nomesDasUnidades[i];
 		}
