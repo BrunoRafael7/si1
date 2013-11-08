@@ -12,15 +12,16 @@ public class ConversorDeNumeros {
 		nomesDasUnidades = new String[10];
 		nomesDosvaloresEntreDezEvinte = new String[10];
 		nomesDasDezenas = new String[10];
+		arrayDeReferencias = new String[3][10];
 		preencheArrayDeNomes();
 		preencheArrayDeReferencias();
 	}
 	
 	private void preencheArrayDeReferencias() {
 		
-		arrayDeReferencias[0] = nomesDasUnidades;
+		arrayDeReferencias[0] = nomesDasDezenas;
 		arrayDeReferencias[1] = nomesDosvaloresEntreDezEvinte;
-		arrayDeReferencias[2] = nomesDasDezenas;
+		arrayDeReferencias[2] = nomesDasUnidades;
 		
 	}
 
@@ -74,12 +75,10 @@ public class ConversorDeNumeros {
 
 	public String get(String valor) {
 		String nomeDoNumero = "";
-		
 		for(char c : valor.toCharArray()){
 			int i = Integer.parseInt(String.valueOf(c));
+			nomeDoNumero += arrayDeReferencias[i][i] + " e ";
 		}
-		
-		
-		return null;
+		return nomeDoNumero;
 	}
 }
