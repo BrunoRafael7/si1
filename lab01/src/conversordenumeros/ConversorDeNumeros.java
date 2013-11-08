@@ -5,7 +5,6 @@ public class ConversorDeNumeros {
 private String [] nomesDasUnidades;
 private String [] nomesDosvaloresEntreDezEvinte;
 private String [] nomesDasDezenas;
-private String [] nomesDeMilhares;
 
 	
 	public ConversorDeNumeros(){
@@ -19,18 +18,6 @@ private String [] nomesDeMilhares;
 		preencheArrayDeUnidades();
 		preencheArrayDeValoresEntreDezEvinte();
 		preencheArrayDeDezenas();
-		preencheArrayDeCentenas();
-		preencheArrayDeMilhares();
-	}
-
-	private void preencheArrayDeMilhares() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void preencheArrayDeCentenas() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private void preencheArrayDeDezenas() {
@@ -48,7 +35,7 @@ private String [] nomesDeMilhares;
 	}
 
 	private void preencheArrayDeValoresEntreDezEvinte() {
-		nomesDosvaloresEntreDezEvinte[0] = "onze";
+		nomesDosvaloresEntreDezEvinte[0] = "";
 		nomesDosvaloresEntreDezEvinte[1] = "onze";
 		nomesDosvaloresEntreDezEvinte[2] = "doze";
 		nomesDosvaloresEntreDezEvinte[3] = "treze";
