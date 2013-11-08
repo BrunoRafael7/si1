@@ -2,9 +2,10 @@ package conversordenumeros;
 
 public class ConversorDeNumeros {
 	
-private String [] nomesDasUnidades;
-private String [] nomesDosvaloresEntreDezEvinte;
-private String [] nomesDasDezenas;
+	private String [] nomesDasUnidades;
+	private String [] nomesDosvaloresEntreDezEvinte;
+	private String [] nomesDasDezenas;
+	private String[][] arrayDeReferencias;
 
 	
 	public ConversorDeNumeros(){
@@ -12,8 +13,17 @@ private String [] nomesDasDezenas;
 		nomesDosvaloresEntreDezEvinte = new String[10];
 		nomesDasDezenas = new String[10];
 		preencheArrayDeNomes();
+		preencheArrayDeReferencias();
 	}
 	
+	private void preencheArrayDeReferencias() {
+		
+		arrayDeReferencias[0] = nomesDasUnidades;
+		arrayDeReferencias[1] = nomesDosvaloresEntreDezEvinte;
+		arrayDeReferencias[2] = nomesDasDezenas;
+		
+	}
+
 	private void preencheArrayDeNomes() {
 		preencheArrayDeUnidades();
 		preencheArrayDeValoresEntreDezEvinte();
@@ -62,10 +72,14 @@ private String [] nomesDasDezenas;
 		
 	}
 
-	public String get(int numero) {
-		if(numero >= 0 && numero <= 20){
-			return nomesDasUnidades[numero];
+	public String get(String valor) {
+		String nomeDoNumero = "";
+		
+		for(char c : valor.toCharArray()){
+			int i = Integer.parseInt(String.valueOf(c));
 		}
+		
+		
 		return null;
 	}
 }
