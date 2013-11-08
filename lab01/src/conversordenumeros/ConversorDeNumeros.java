@@ -75,9 +75,11 @@ public class ConversorDeNumeros {
 
 	public String get(String valor) {
 		String nomeDoNumero = "";
-		for(char c : valor.toCharArray()){
-			int i = Integer.parseInt(String.valueOf(c));
-			nomeDoNumero += arrayDeReferencias[i][i] + " e ";
+		char[] caracteresNumericos = valor.toCharArray();
+		for(int i = 0 ; i <= caracteresNumericos.length; i--){
+			char c = caracteresNumericos[i];
+			int j = Integer.parseInt(String.valueOf(c));
+			nomeDoNumero += (i != caracteresNumericos.length - 1 && j == 0 ? " e " : "") + arrayDeReferencias[i][j];
 		}
 		return nomeDoNumero;
 	}

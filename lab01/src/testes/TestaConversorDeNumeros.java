@@ -18,7 +18,6 @@ public class TestaConversorDeNumeros {
 	
 	@Test
 	public void testaEntradaSimples(){
-		
 		//Testes Simples cenário 1
 		assertEquals("dez", conversorDeNumeros.get("10"));
 		assertEquals("um", conversorDeNumeros.get("1"));
