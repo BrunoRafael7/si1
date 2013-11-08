@@ -15,16 +15,23 @@ public class TestaConversorDeNumeros {
 	}
 	
 	@Test
-	public void entradaSimples(){
+	public void testaEntradaSimples(){
 		
 		//Testes Simples cenário 1
-		assertEquals(conversor.converte(10), "dez");
-		assertEquals(conversor.converte(1), "um");
-		assertEquals(conversor.converte(0), "zero");
+		assertEquals("dez", conversor.converte(10));
+		assertEquals("um", conversor.converte(1));
+		assertEquals("zero", conversor.converte(0));
 		
 		//Testes Simples cenário 2
-		assertEquals(conversor.converte(15), "quinze");
-		assertEquals(conversor.converte(20), "vinte");
+		assertEquals("quinze", conversor.converte(15));
+		assertEquals("vinte", conversor.converte(20));
 	}
-
+	/**
+	 * Se a entrada for vazia (simbolizado por -1)
+	 * o método retorna null
+	 */
+	@Test
+	public void testaEntradaVazia(){
+		assertEquals(null, conversor.converte(-1));
+	}
 }
