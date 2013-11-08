@@ -7,26 +7,25 @@ import conversordenumeros.ConversorDeNumeros;
 
 public class TestaConversorDeNumeros {
 	
-	private ConversorDeNumeros conversor;
+	private ConversorDeNumeros numerosEmPortugues;
 	
 	@Before
 	public void init(){
-		conversor = new ConversorDeNumeros();
+		numerosEmPortugues = new ConversorDeNumeros();
 	}
 	
-	/**
-	 * Se a entrada for vazia
-	 * o método retorna null
-	 */
 	@Test
-	public void testaEntradaVazia(){
-		assertEquals(null, conversor.converte(""));
+	public void testaEntradaSimples(){
+		
+		//Testes Simples cenário 1
+		assertEquals("dez", numerosEmPortugues.get(10));
+		assertEquals("um", numerosEmPortugues.get(1));
+		assertEquals("zero", numerosEmPortugues.get(0));
+		
+		//Testes Simples cenário 2
+		assertEquals("quinze", numerosEmPortugues.get(15));
+		assertEquals("vinte", numerosEmPortugues.get(20));
 	}
 	
-	public void testaEntradasInvalidas(){
-		try{
-			conversor.converte("carro");
-			fail("Entrada inválida");
-		}catch (Exception e) {}
-	}
+	
 }

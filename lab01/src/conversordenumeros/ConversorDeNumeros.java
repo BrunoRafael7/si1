@@ -1,7 +1,8 @@
 package conversordenumeros;
 
 public class ConversorDeNumeros {
-	private String [] nomesDasUnidades;
+	
+private String [] nomesDasUnidades;
 	
 	public ConversorDeNumeros(){
 		nomesDasUnidades = new String[21];
@@ -33,11 +34,10 @@ public class ConversorDeNumeros {
 		
 	}
 
-	public String converte(int numero) {
+	public String get(int numero) {
 		if(numero >= 0 && numero <= 20){
 			return nomesDasUnidades[numero];
 		}
 		return null;
 	}
-
 }
