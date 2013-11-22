@@ -2,7 +2,6 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
-
 import views.html.*;
 
 public class Application extends Controller {
@@ -12,6 +11,14 @@ public class Application extends Controller {
     }
     
     public static Result helloWorld() {
-        return ok(index.render("Hello World"));
+        return ok(web.render("Hello World"));
+    }
+    
+    public static Result tasks(){
+    	return ok(web.render("Bruno Rafael"));
+    }
+    
+    public static Result newTasks(){
+    	return TODO;
     }
 }
