@@ -1,6 +1,8 @@
-@(message: String)
+@(tasks: List[task], taskForm : Form[task])
 
-@main("Welcome to Play") {
+@import helper._
+
+@main() {
 
     @play20.welcome(message, style = "Java")
 

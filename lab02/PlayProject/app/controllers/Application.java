@@ -11,11 +11,11 @@ public class Application extends Controller {
     }
     
     public static Result helloWorld() {
-        return ok(web.render("Hello World"));
+        return ok(web.render("Hello, ", "god job!"));
     }
     
     public static Result tasks(){
-    	return ok(web.render("Bruno Rafael"));
+    	return ok(web.render("Bruno Rafael", "MATRÍCULA : 111210056"));
     }
     
     public static Result newTasks(){
