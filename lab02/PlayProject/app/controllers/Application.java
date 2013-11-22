@@ -11,7 +11,7 @@ public class Application extends Controller {
     }
     
     public static Result helloWorld() {
-        return ok(web.render("Hello, ", "god job!"));
+        return ok(web.render("Hello, ", "god job Bruno!"));
     }
     
     public static Result tasks(){
