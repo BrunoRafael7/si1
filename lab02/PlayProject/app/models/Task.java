@@ -11,13 +11,14 @@ public class Task {
 	@Required
 	private String label;
 	
+	private static List<Task> tasks =  new ArrayList<Task>();
 	
 	public static List<Task> all(){
-		return new ArrayList<Task>();
+		return tasks;
 	}
 	
 	public static void create(Task task){
-		
+		tasks.add(task);
 	}
 	
 	public static void delete(Long id){

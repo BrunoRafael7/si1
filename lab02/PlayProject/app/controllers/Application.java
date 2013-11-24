@@ -18,7 +18,14 @@ public class Application extends Controller {
     }
     
     public static Result newTask(){
-    	return TODO;
+    	Form<Task> form = taskForm.bindFromRequest();
+    	if(form.hasErrors()){
+    		return badRequest(views.html.index.render(Task.all(), form));
+    	}else{
+    		Task.create(form.get());
+    		return redirect(routes.Application.tasks()); 
+    	}
+    	
     }
     
     public static Result deleteTask(Long id){
