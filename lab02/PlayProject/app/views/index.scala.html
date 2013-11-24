@@ -1,9 +1,30 @@
-@(tasks: List[task], taskForm : Form[task])
+@(tasks: List[Task], taskForm: Form[Task])
 
 @import helper._
 
-@main() {
-
-    @play20.welcome(message, style = "Java")
-
+@main("TODO list") {
+	
+	<h1>@tasks.size() tarefa(s)</h1>
+	
+	<ul>
+		@for(task <- tasks){
+			<li>
+				@task.getLabel()
+				@form(routes.Application.deleteTask(task.getId())){
+					<input type ="submit"  value = "Delete">
+			
+				}
+			</li>
+			
+		}
+	</ul>
+	<h2> Criar uma nova tarefa</h2>
+	
+	@form(routes.Application.newTask()){
+	
+		@inputText(taskForm("nova tarefa"))
+		
+		<input type = "submit" value = "create">
+	
+	}
 }

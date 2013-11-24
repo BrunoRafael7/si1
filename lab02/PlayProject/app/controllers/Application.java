@@ -1,24 +1,28 @@
 package controllers;
 
-import play.*;
+import models.Task;
+
+import play.data.Form;
 import play.mvc.*;
-import views.html.*;
 
 public class Application extends Controller {
+	
+	static Form<Task> taskForm = Form.form(Task.class);
 
     public static Result index() {
-        return ok(index.render("Your new application is ready."));
+    	return redirect(routes.Application.tasks());
     }
-    
-    public static Result helloWorld() {
-        return ok(web.render("Hello, ", "god job Bruno!"));
-    }
-    
+
     public static Result tasks(){
-    	return ok(web.render("Bruno Rafael", "MATRÍCULA : 111210056"));
+    	return ok(views.html.index.render(Task.all() , taskForm));
     }
     
-    public static Result newTasks(){
+    public static Result newTask(){
     	return TODO;
     }
+    
+    public static Result deleteTask(Long id){
+    	return TODO;
+    }
+   
 }
