@@ -5,6 +5,7 @@ import models.Task;
 import play.data.Form;
 import play.mvc.*;
 
+
 public class Application extends Controller {
 	
 	static Form<Task> taskForm = Form.form(Task.class);

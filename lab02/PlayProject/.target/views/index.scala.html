@@ -1,6 +1,7 @@
 @(tasks: List[Task], taskForm: Form[Task])
 
 @import helper._
+@import play.i18n._
 
 @main("Templates") {
 	
@@ -12,7 +13,7 @@
 			<li>
 				@task.getLabel()
 				@form(routes.Application.deleteTask(task.getId())){
-					<input type="submit"  value="Remover">
+					<input type="submit"  value=@Messages.get("Remove")>
 			
 				}
 			</li>
@@ -24,6 +25,6 @@
 	
 	@form(routes.Application.newTask()){
 		@inputText(taskForm("label"), '_label->"Nova tarefa")
-		<input type="submit" value="Criar">
+		<input type="submit" value=@Messages.get("Create")>
 	}
 }

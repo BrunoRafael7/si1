@@ -15,7 +15,7 @@ public class Task extends Model{
 	@Id
 	private Long id;
 	
-	@Required
+	@Required(message = "Obrigatório")
 	private String label;
 	
 	private static Finder<Long, Task> find = new Finder<Long, Task>(Long.class, Task.class);
