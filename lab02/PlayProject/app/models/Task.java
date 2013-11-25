@@ -1,28 +1,35 @@
 package models;
-import java.util.ArrayList;
 import java.util.List;
 
-import play.data.validation.Constraints.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-public class Task {
+import play.data.validation.Constraints.Required;
+import play.db.ebean.Model;
+
+@Entity
+public class Task extends Model{
 	
+	private static final long serialVersionUID = 1L;
+
+	@Id
 	private Long id;
 	
 	@Required
 	private String label;
 	
-	private static List<Task> tasks =  new ArrayList<Task>();
+	private static Finder<Long, Task> find = new Finder<Long, Task>(Long.class, Task.class);
 	
 	public static List<Task> all(){
-		return tasks;
+		return find.all();
 	}
 	
 	public static void create(Task task){
-		tasks.add(task);
+		task.save();
 	}
 	
 	public static void delete(Long id){
-		
+		find.ref(id).delete();
 	}
 
 	public Long getId() {

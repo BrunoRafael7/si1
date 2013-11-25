@@ -2,28 +2,28 @@
 
 @import helper._
 
-@main("TODO list") {
+@main("Templates") {
 	
 	<h1>@tasks.size() tarefa(s)</h1>
 	
 	<ul>
+	@if(tasks.size() != 0){
 		@for(task <- tasks){
 			<li>
 				@task.getLabel()
 				@form(routes.Application.deleteTask(task.getId())){
-					<input type ="submit"  value = "Delete">
+					<input type="submit"  value="Delete">
 			
 				}
 			</li>
 			
 		}
+	}
 	</ul>
-	<h2> Criar uma nova tarefa</h2>
+	<h2> Adicionar uma nova tarefa</h2>
 	
 	@form(routes.Application.newTask()){
-	
-		@inputText(taskForm("nova tarefa"))
-		
-		<input type = "submit" value = "create">
+		@inputText(taskForm("label"), '_label->"Nova tarefa")
+		<input type="submit" value="Create">
 	}
 }

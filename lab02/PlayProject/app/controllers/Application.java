@@ -20,7 +20,7 @@ public class Application extends Controller {
     public static Result newTask(){
     	Form<Task> form = taskForm.bindFromRequest();
     	if(form.hasErrors()){
-    		return badRequest(views.html.index.render(Task.all(), form));
+    		return badRequest(form.errors().toString());
     	}else{
     		Task.create(form.get());
     		return redirect(routes.Application.tasks()); 
