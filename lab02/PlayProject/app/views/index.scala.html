@@ -12,7 +12,7 @@
 			<li>
 				@task.getLabel()
 				@form(routes.Application.deleteTask(task.getId())){
-					<input type="submit"  value="Delete">
+					<input type="submit"  value="Remover">
 			
 				}
 			</li>
@@ -24,6 +24,6 @@
 	
 	@form(routes.Application.newTask()){
 		@inputText(taskForm("label"), '_label->"Nova tarefa")
-		<input type="submit" value="Create">
+		<input type="submit" value="Criar">
 	}
 }
