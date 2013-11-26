@@ -8,23 +8,24 @@
 	<h1>@tasks.size() tarefa(s)</h1>
 	
 	<ul>
-	@if(tasks.size() != 0){
+
 		@for(task <- tasks){
 			<li>
-				@task.getLabel()
+				@task.getLabel() , @task.getProject(), @task.getPriority()
 				@form(routes.Application.deleteTask(task.getId())){
 					<input type="submit"  value=@Messages.get("Remove")>
-			
 				}
 			</li>
 			
 		}
-	}
+
 	</ul>
 	<h2> Adicionar uma nova tarefa</h2>
 	
 	@form(routes.Application.newTask()){
 		@inputText(taskForm("label"), '_label->"Nova tarefa")
+		@inputText(taskForm("project"), '_label->"Nome do projeto")
+		@inputText(taskForm("priority"), '_label->"Defina uma prioridade")
 		<input type="submit" value=@Messages.get("Create")>
 	}
 }

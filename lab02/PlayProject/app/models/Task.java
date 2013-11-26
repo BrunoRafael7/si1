@@ -1,4 +1,5 @@
 package models;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,20 +9,28 @@ import play.data.validation.Constraints.Required;
 import play.db.ebean.Model;
 
 @Entity
-public class Task extends Model{
+public class Task extends Model implements Comparable<Task>{
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	private Long id;
 	
-	@Required(message = "Obrigatório")
+	@Required
 	private String label;
+	
+	@Required
+	private String project;
+	
+	@Required
+	private String priority;
 	
 	private static Finder<Long, Task> find = new Finder<Long, Task>(Long.class, Task.class);
 	
 	public static List<Task> all(){
-		return find.all();
+		List<Task> list = find.all();
+		Collections.sort(list);
+		return list;
 	}
 	
 	public static void create(Task task){
@@ -46,6 +55,27 @@ public class Task extends Model{
 
 	public void setLabel(String label) {
 		this.label = label;
+	}
+
+	public String getProject() {
+		return project;
+	}
+
+	public void setProject(String project) {
+		this.project = project;
+	}
+
+	public String getPriority() {
+		return priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}
+
+	@Override
+	public int compareTo(Task o) {
+		return getPriority().compareTo(o.getPriority());
 	}
 
 }
