@@ -25,6 +25,8 @@ public class Task extends Model implements Comparable<Task>{
 	@Required
 	private String priority;
 	
+	private boolean isComplete;
+	
 	private static Finder<Long, Task> find = new Finder<Long, Task>(Long.class, Task.class);
 	
 	public static List<Task> all(){
@@ -39,6 +41,12 @@ public class Task extends Model implements Comparable<Task>{
 	
 	public static void delete(Long id){
 		find.ref(id).delete();
+	}
+	
+	public static void update(Long id){
+		Task task = find.ref(id);
+		task.setComplete(!task.isComplete);
+		task.update();
 	}
 
 	public Long getId() {
@@ -76,6 +84,14 @@ public class Task extends Model implements Comparable<Task>{
 	@Override
 	public int compareTo(Task o) {
 		return getPriority().compareTo(o.getPriority());
+	}
+
+	public boolean isComplete() {
+		return isComplete;
+	}
+
+	public void setComplete(boolean isComplete) {
+		this.isComplete = isComplete;
 	}
 
 }

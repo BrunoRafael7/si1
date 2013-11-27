@@ -8,8 +8,8 @@ import play.mvc.*;
 
 public class Application extends Controller {
 	
-	static Form<Task> taskForm = Form.form(Task.class);
-
+	private static Form<Task> taskForm = Form.form(Task.class);	
+	
     public static Result index() {
     	return redirect(routes.Application.tasks());
     }
@@ -33,5 +33,9 @@ public class Application extends Controller {
     	Task.delete(id);
     	return redirect(routes.Application.tasks());
     }
-   
+    
+    public static Result update(Long id){
+    	Task.update(id);
+    	return redirect(routes.Application.tasks());
+    }
 }
