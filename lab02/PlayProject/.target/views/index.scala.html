@@ -18,22 +18,22 @@
 				background-color : #6487ed;
 			}
 			table{
-				height:50px;
+				height:150px;
 				width:200px;
-				align:center;
-				border-collapse:collapse;
+				text-align:center;
 				border: 1px solid black;
 			}
 			
 			tr{
 				height:150px;
+				width:350px;
 			}
 			
 			td{
 				text-align:center;
 				color : #FFFFFF;
-			 	height:50px;
-			 	vertical-align:bottom;
+			 	height:150px;
+			 	width:150px;
 			 	padding:1px;
 			}
 			
@@ -43,8 +43,9 @@
 		<h2> @tasks.size() tarefa(s)</h2>
 	</head>
 	<body>
+	<table>
 	@if(tasks.size() != 0){
-		<table>
+		
 		<tr>
 		<td>
 		@for(task <- tasks){
@@ -58,13 +59,12 @@
 						<input type="submit" value=@Messages.get("Remove")>
 					}
 			}
-			<br><br><br>
 		}
 		</td>
 		<td>
+		Tarefas Concluídas<br>
 		@for(task <- tasks){	
 			@if(task.isComplete()){
-					Tarefas Concluídas<br>
 					@task.getLabel() , @task.getProject(), @task.getPriority()
 					@form(routes.Application.deleteTask(task.getId())){
 						<input type="submit" value=@Messages.get("Remove")>
@@ -75,8 +75,8 @@
 		}
 		</td>
 		</tr>	
-		</table>
 	}
+	</table>
 	
 	@form(routes.Application.newTask()){
 		@inputText(taskForm("label"), '_label->"Nova tarefa")
